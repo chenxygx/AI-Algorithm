@@ -14,9 +14,9 @@ def lr_train_bgd(feature, label, maxCycle, alpha):
     # 查看特征维度
     n = np.shape(feature)[1]
     # 创建权重矩阵，初始化0
-    w = np.mat(np.ones((n, 1)))
+    # w = np.mat(np.ones((n, 1)))
     # 标准正态分布矩阵
-    # w = np.random.normal(size=(n, 1))
+    w = np.random.normal(size=(n, 1))
     i = 0
     # 限制最大迭代次数范围
     while i <= maxCycle:
@@ -25,7 +25,7 @@ def lr_train_bgd(feature, label, maxCycle, alpha):
         h = sig(feature * w)
         err = label - h
         if i % 100 == 0:
-            print("当前迭代次数=%s,误差比例=%s" % (str(i), str(error_rate(h, label))))
+            print("当前迭代次数=%s,误差比例=%.15f" % (str(i), float(error_rate(h, label))))
         # 权重修正
         w = w + alpha * feature.T * err
     return w
@@ -45,7 +45,7 @@ def error_rate(h, label):
             sum_err -= (label[i, 0] * np.log(h[i, 0]) + (1 - label[i, 0]) * np.log(1 - h[i, 0]))
         else:
             sum_err -= 0
-    return sum_err / m
+    return float(sum_err / m)
 
 
 def predict(data, w):
