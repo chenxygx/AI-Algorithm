@@ -11,7 +11,7 @@ def train():
     # 训练Softmax模型
     print("训练Softmax模型")
     maxCycle = 50000
-    alpha = 0.5
+    alpha = 0.2
     weights = gradient_ascent(feature, label, k, maxCycle, alpha)
     # 保存模型
     print("保存模型")
