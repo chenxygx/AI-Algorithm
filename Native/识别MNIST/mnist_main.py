@@ -1,11 +1,11 @@
 import numpy as np
+from PIL import Image
+from 识别MNIST.mnist import load_mnist
 
-from mnist import load_mnist
 
-
-# def img_show(img):
-#     pil_img = Image.fromarray(np.uint8(img))
-#     pil_img.show()
+def img_show(img):
+    pil_img = Image.fromarray(np.uint8(img))
+    pil_img.show()
 
 
 def load():
@@ -22,9 +22,9 @@ def load():
     print(label)
 
     img = img.reshape(28, 28)
-    print img.shape
+    print(img.shape)
 
-    # img_show(img)
+    img_show(img)
 
 
 if __name__ == "__main__":

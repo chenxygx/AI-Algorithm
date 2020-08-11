@@ -1,6 +1,6 @@
-from softmaxRegressionUtils import load_data, load_weights, \
+from Softmax回归.softmaxRegressionUtils import load_data, load_weights, \
     load_data_test, predict, save_model, save_result
-from softmaxRegression import gradient_ascent
+from Softmax回归.softmaxRegression import gradient_ascent
 
 
 def train():

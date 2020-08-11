@@ -130,3 +130,6 @@ dmypy.json
 
 .idea/*
 .idea
+Native/Result/*
+Native/Result
+Native/识别MNIST/mnist.pkl
