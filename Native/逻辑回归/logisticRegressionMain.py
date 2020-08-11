@@ -1,3 +1,4 @@
+# coding=utf-8
 import numpy as np
 
 from 逻辑回归.logisticRegression import lr_train_bgd, predict
